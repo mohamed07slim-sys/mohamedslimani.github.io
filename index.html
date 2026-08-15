@@ -1,64 +1,824 @@
-MS. À propos Parcours Compétences Projets Contact
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Disponible pour apprendre & créer
-Mohamed
-Slimani.
-Étudiant en double licence Mathématiques & Informatique. Je construis progressivement mon parcours autour des mathématiques, du code et des technologies numériques.
-Voir mes projets ↓ Me contacter
+  <title>Mohamed Slimani — Mathématiques & Informatique</title>
 
-MS
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-01 — À propos
-Curieux, analytique,
-orienté technologie.
-Ce portfolio évoluera avec mon parcours universitaire et mes projets. Mon objectif est de documenter ce que j'apprends, les problèmes que je résous et les choses que je construis.
+    html {
+      scroll-behavior: smooth;
+    }
 
-Mon approche
-J'aime comprendre comment les choses fonctionnent, partir d'un problème concret et chercher une solution structurée. Les mathématiques m'apportent la rigueur ; l'informatique me permet de transformer les idées en projets.
-Ce que je recherche
-Des projets qui me permettent de progresser en programmation, algorithmique, data, intelligence artificielle et développement logiciel, tout en construisant une base mathématique solide.
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07080d;
+      color: #f5f7fb;
+      line-height: 1.6;
+    }
 
-02 — Parcours
-Mon parcours.
-Une section volontairement simple : elle pourra être complétée au fil de tes études.
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-2026 — 2027 Double licence Mathématiques — Informatique
-Formation universitaire à Montpellier.
-Formation précédente Baccalauréat scientifique
-Parcours scientifique avec un intérêt marqué pour les sciences et la résolution de problèmes.
-À venir Projets personnels & expériences
-Cette partie sera enrichie avec mes réalisations, stages, expériences et certifications.
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
 
-03 — Compétences
-Ce que j'apprends.
-Les compétences seront mises à jour au fur et à mesure de ma progression.
+    /* NAVIGATION */
 
-Mathématiques
-Algèbre Analyse Probabilités Statistiques Algorithmique mathématique
-Informatique
-HTML / CSS JavaScript Git / GitHub Python Algorithmique
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 8, 13, 0.85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #20232d;
+    }
 
-04 — Projets
-Ce que je construis.
-Les prochains projets apparaîtront ici avec leur description, les technologies utilisées et un lien vers leur code.
+    .nav-container {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-01
-Portfolio personnel
-Un site personnel pour présenter mon parcours, mes compétences et mes projets.
-HTML · CSS · GitHub Pages
-02
-Projet à venir
-Un projet informatique développé pendant ma formation ou en autonomie.
-Bientôt disponible
-03
-Projet à venir
-Une réalisation autour des mathématiques, de la data ou de l'algorithmique.
-Bientôt disponible
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #8b7cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      color: #a8afbd;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .available {
+      color: #5ee7c5;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .available::before {
+      content: "●";
+      margin-right: 8px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 8vw, 105px);
+      line-height: 0.9;
+      letter-spacing: -6px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #ffffff, #8b7cff, #5ee7c5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: #a8afbd;
+      max-width: 620px;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 13px 20px;
+      border-radius: 30px;
+      border: 1px solid #292d38;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary {
+      background: white;
+      color: #07080d;
+    }
+
+    .secondary {
+      background: #11131b;
+    }
+
+    /* MONOGRAMME */
+
+    .visual {
+      height: 390px;
+      border-radius: 30px;
+      border: 1px solid #252936;
+      background:
+        radial-gradient(circle, rgba(139,124,255,0.18), transparent 55%),
+        #10121a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .monogram {
+      width: 145px;
+      height: 145px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 900;
+      color: #08090e;
+      background: linear-gradient(135deg, #8b7cff, #5ee7c5);
+      box-shadow: 0 0 80px rgba(139,124,255,0.35);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .label {
+      color: #8b7cff;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      color: #a8afbd;
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    /* CARTES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      background: #10121a;
+      border: 1px solid #252936;
+      border-radius: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #a8afbd;
+    }
+
+    /* PARCOURS */
+
+    .timeline {
+      border-left: 2px solid #494173;
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .date {
+      color: #5ee7c5;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* COMPETENCES */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: #171a23;
+      border: 1px solid #292d38;
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    /* PROJETS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-number {
+      color: #8b7cff;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .project h3 {
+      margin-top: 15px;
+    }
+
+    .project-tag {
+      display: block;
+      margin-top: 25px;
+      color: #5ee7c5;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 70px 25px;
+      border: 1px solid #252936;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle, rgba(139,124,255,0.13), transparent 60%),
+        #10121a;
+    }
+
+    .contact-box p {
+      max-width: 600px;
+      margin: auto;
+      color: #a8afbd;
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #20232d;
+      padding: 25px 0;
+      color: #777f90;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        height: 280px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -4px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-container">
+
+      <a href="#top" class="logo">
+        MS<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
 
 
-05 — Contact
-Construisons quelque chose.
-Pour une opportunité, un projet ou simplement pour échanger autour de la technologie et des mathématiques, n'hésitez pas à me contacter.
-contact@mohamedslimani.com
-GitHub ↗️ LinkedIn ↗️
-©️ 2026 Mohamed Slimani Mathématiques × Informatique
+  <!-- HERO -->
+
+  <main id="top">
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="available">
+            Disponible pour apprendre & créer
+          </div>
+
+          <h1>
+            Mohamed<br>
+            <span class="gradient">Slimani.</span>
+          </h1>
+
+          <p class="hero-text">
+            Étudiant en double licence
+            <strong>Mathématiques & Informatique</strong>.
+            Je construis progressivement mon parcours autour des mathématiques,
+            du code et des technologies numériques.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#projets" class="button primary">
+              Voir mes projets ↓
+            </a>
+
+            <a href="#contact" class="button secondary">
+              Me contacter
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="visual">
+
+          <div class="monogram">
+            MS
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- A PROPOS -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="label">
+          01 — À propos
+        </div>
+
+        <h2>
+          Curieux, analytique,<br>
+          orienté technologie.
+        </h2>
+
+        <p class="intro">
+          Ce portfolio évoluera avec mon parcours universitaire et mes projets.
+          Mon objectif est de documenter ce que j'apprends, les problèmes que je
+          résous et les choses que je construis.
+        </p>
+
+        <div class="cards">
+
+          <div class="card">
+
+            <h3>
+              Mon approche
+            </h3>
+
+            <p>
+              J'aime comprendre comment les choses fonctionnent, partir d'un
+              problème concret et chercher une solution structurée.
+              Les mathématiques m'apportent la rigueur ; l'informatique me
+              permet de transformer les idées en projets.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Ce que je recherche
+            </h3>
+
+            <p>
+              Des projets qui me permettent de progresser en programmation,
+              algorithmique, data, intelligence artificielle et développement
+              logiciel, tout en construisant une base mathématique solide.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PARCOURS -->
+
+    <section id="parcours">
+
+      <div class="container">
+
+        <div class="label">
+          02 — Parcours
+        </div>
+
+        <h2>
+          Mon parcours.
+        </h2>
+
+        <p class="intro">
+          Mon parcours universitaire et mes prochaines expériences.
+        </p>
+
+        <div class="card timeline">
+
+          <div class="timeline-item">
+
+            <div class="date">
+              2026 — 2027
+            </div>
+
+            <h3>
+              Double licence Mathématiques — Informatique
+            </h3>
+
+            <p>
+              Formation universitaire à Montpellier.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="date">
+              Formation précédente
+            </div>
+
+            <h3>
+              Baccalauréat scientifique
+            </h3>
+
+            <p>
+              Parcours scientifique avec un intérêt marqué pour les sciences
+              et la résolution de problèmes.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="date">
+              À venir
+            </div>
+
+            <h3>
+              Projets personnels & expériences
+            </h3>
+
+            <p>
+              Cette partie sera enrichie avec mes réalisations, stages,
+              expériences et certifications.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPETENCES -->
+
+    <section id="competences">
+
+      <div class="container">
+
+        <div class="label">
+          03 — Compétences
+        </div>
+
+        <h2>
+          Ce que j'apprends.
+        </h2>
+
+        <p class="intro">
+          Les compétences seront mises à jour au fur et à mesure de ma progression.
+        </p>
+
+
+        <div class="card">
+
+          <h3>
+            Mathématiques
+          </h3>
+
+          <div class="skills">
+
+            <span class="skill">Algèbre</span>
+            <span class="skill">Analyse</span>
+            <span class="skill">Probabilités</span>
+            <span class="skill">Statistiques</span>
+            <span class="skill">Algorithmique mathématique</span>
+
+          </div>
+
+
+          <h3 style="margin-top:35px;">
+            Informatique
+          </h3>
+
+          <div class="skills">
+
+            <span class="skill">HTML / CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Git / GitHub</span>
+            <span class="skill">Python</span>
+            <span class="skill">Algorithmique</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJETS -->
+
+    <section id="projets">
+
+      <div class="container">
+
+        <div class="label">
+          04 — Projets
+        </div>
+
+        <h2>
+          Ce que je construis.
+        </h2>
+
+        <p class="intro">
+          Mes projets personnels, universitaires et expérimentations.
+        </p>
+
+
+        <div class="projects">
+
+
+          <div class="card project">
+
+            <div>
+
+              <span class="project-number">
+                01
+              </span>
+
+              <h3>
+                Portfolio personnel
+              </h3>
+
+              <p>
+                Un site personnel pour présenter mon parcours,
+                mes compétences et mes projets.
+              </p>
+
+            </div>
+
+            <span class="project-tag">
+              HTML · CSS · GitHub Pages
+            </span>
+
+          </div>
+
+
+          <div class="card project">
+
+            <div>
+
+              <span class="project-number">
+                02
+              </span>
+
+              <h3>
+                Projet à venir
+              </h3>
+
+              <p>
+                Un projet informatique développé pendant ma formation
+                ou en autonomie.
+              </p>
+
+            </div>
+
+            <span class="project-tag">
+              Bientôt disponible
+            </span>
+
+          </div>
+
+
+          <div class="card project">
+
+            <div>
+
+              <span class="project-number">
+                03
+              </span>
+
+              <h3>
+                Projet à venir
+              </h3>
+
+              <p>
+                Une réalisation autour des mathématiques,
+                de la data ou de l'algorithmique.
+              </p>
+
+            </div>
+
+            <span class="project-tag">
+              Bientôt disponible
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="label">
+            05 — Contact
+          </div>
+
+          <h2>
+            Construisons quelque chose.
+          </h2>
+
+          <p>
+            Pour une opportunité, un projet ou simplement pour échanger
+            autour de la technologie et des mathématiques, n'hésitez pas
+            à me contacter.
+          </p>
+
+          <!-- On changera cette adresse plus tard -->
+          <a
+            class="email"
+            href="mailto:contact@mohamedslimani.com">
+            contact@mohamedslimani.com
+          </a>
+
+          <div class="buttons" style="justify-content:center;">
+
+            <a
+              class="button secondary"
+              href="https://github.com/mohamed07slim-sys"
+              target="_blank">
+              GitHub ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Mohamed Slimani
+      </span>
+
+      <span>
+        Mathématiques × Informatique
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
